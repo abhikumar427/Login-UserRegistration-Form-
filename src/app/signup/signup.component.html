@@ -1,0 +1,315 @@
+<div class="signup-form-container">
+  <div class="form-container">
+    <form #signupForm="ngForm" (ngSubmit)="onFormSubmit(signupForm.value)" autocomplete="false" class="form">
+      <h4 class="form-header">Sign up
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </h4>
+      <div class="control">
+        <label for="name">Name</label>
+        <input ngModel #name="ngModel" minlength="3" name="name" required id="name" type="text">
+        <div class="form-error" *ngIf="name.touched && !name.valid">
+          <div *ngIf="name.errors.required">
+            Name is required
+          </div>
+          <div *ngIf="name.errors.minlength">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="dob">Date Of Birth</label>
+        <input ngModel #dob="ngModel" pattern="[dob]" name="dob" required id="dob" type="text">
+        <div class="form-error" *ngIf="dob.touched && !dob.valid">
+          <div *ngIf="dob.errors.required">
+            DOB is required
+          </div>
+          <div *ngIf="dob.errors.pattern">
+            DOB must be mm/dd/yy format.
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="nationality">Nationality</label>
+        <input ngModel #nationality="ngModel" minlength="4" name="nationality" required id="nationality" type="text">
+        <div class="form-error" *ngIf="nationality.touched && !nationality.valid">
+          <div *ngIf="nationality.errors.required">
+            Nationality is required
+          </div>
+          <div *ngIf="nationality.errors.pattern">
+            Please Provide Your Nationality
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+        <label for="location">Location</label>
+        <input ngModel #location="ngModel" minlength="10" name="location" required id="location" type="text">
+        <div class="form-error" *ngIf="location.touched && !location.valid">
+          <div *ngIf="location.errors.required">
+            Location is required
+          </div>
+          <div *ngIf="location.errors.pattern">
+            Please provide an accurate Address
+          </div>
+        </div>
+      </div>
+
+      <div class="control">
+          <label for="association">Association</label>
+
+          <input ngModel #association="ngModel" minlength="3" name="association" required id="association" type="text">
+          <div class="form-error" *ngIf="association.touched && !association.valid">
+            <div *ngIf="association.errors.required">
+              Association is required
+            </div>
+
+            <div *ngIf="association.errors.pattern">
+              Please Provide the correct association
+            </div>
+          </div>
+      </div>
+
+
+     <div class="control">
+            <label for="team">Team</label>
+            <input ngModel #team="ngModel" minlength="3" name="team" required id="team" type="text">
+            <div class="form-error" *ngIf="team.touched && !team.valid">
+              <div *ngIf="team.errors.required">
+                Team Name is required
+              </div>
+              <div *ngIf="team.errors.pattern">
+                Please Provide the correct Team
+              </div>
+            </div>
+     </div>
+
+     <div class="control">
+            <label for="gender">Gender</label>
+            <select>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="gender neutral">Gender Neutral</option>
+              </select>
+
+            <input ngModel #gender="ngModel" minlength="1" name="gender" required id="gender" type="text">
+            <div class="form-error" *ngIf="gender.touched && !gender.valid">
+              <div *ngIf="gender.errors.required">
+                Gender is required
+              </div>
+              <div *ngIf="gender.errors.pattern">
+                Please Provide your Grnder
+              </div>
+            </div>
+     </div>
+
+     <div class="control">
+            <label for="sports">Sports</label>
+            <select>
+            <option value="male">Golf</option>
+            <option value="female">Tennis</option>
+            <option value="">Cricket</option>
+            <option value="male">Basketball</option>
+            <option value="female">Baseball</option>
+            <option value="">American Football</option>
+            <option value="male">Aquatics</option>
+            <option value="female">Archery</option>
+            <option value="">Automobile Racing</option>
+            <option value="male">Badminton</option>
+            <option value="female">Beach Volleyball</option>
+            <option value="">Bobsleigh</option>
+            <option value="male">Body Building</option>
+            <option value="female">Boxing</option>
+            <option value="">Cross Country Running</option>
+            <option value="male">Cross Country Skiing</option>
+            <option value="female">Curling</option>
+            <option value="">Cycling</option>
+            <option value="">Darts</option>
+            <option value="male">Decathlon</option>
+            <option value="female">Down Hill Skiing</option>
+            <option value="">Equestrianism</option>
+            <option value="male">eSports</option>
+            <option value="female">Fencing</option>
+            <option value="">Field Hockey</option>
+            <option value="">Figure Skating</option>
+            <option value="male">Gymnastics</option>
+            <option value="female">Ice Hockey</option>
+            <option value="">Martial Arts</option>
+            <option value="male">Mixed Martial Arts</option>
+            <option value="female">Modern Pentathlon</option>
+            <option value="">Motorcycle Racing</option>
+            <option value="">Netball</option>
+            <option value="male">Polo</option>
+            <option value="female">Racquetball</option>
+            <option value="">Rowing</option>
+            <option value="">Rugby</option>
+            <option value="male">Sailing</option>
+            <option value="female">Softball</option>
+            <option value="">Shooting</option>
+            <option value="male">Skateboarding</option>
+            <option value="female">Skeet Shooting</option>
+            <option value="">Skeleton</option>
+            <option value="">Snow Boarding</option>
+            <option value="male">Soccer (Football)</option>
+            <option value="female">Squash</option>
+            <option value="">Surfing</option>
+            <option value="">Swimming</option>
+            <option value="male">Track and Field</option>
+            </select>
+                <input ngModel #sports="ngModel" minlength="3" name="sports" required id="sports" type="text">
+                <div class="form-error" *ngIf="sports.touched && !sports.valid">
+                  <div *ngIf="sports.errors.required">
+                    Sports is required
+                  </div>
+                  <div *ngIf="sports.errors.pattern">
+                    Please Provide a sport
+                  </div>
+
+                </div>
+      </div>
+
+      <div class="control">
+            <label for="about">About</label>
+            <input ngModel #about="ngModel" minlength="10" name="about" required id="about" type="text">
+            <div class="form-error" *ngIf="about.touched && !about.valid">
+              <div *ngIf="about.errors.required">
+                  About is required
+              </div>
+              <div *ngIf="about.errors.pattern">
+                  Please Provide something about yourself
+              </div>
+          </div>
+      </div>
+
+      <div class="control">
+          <label for="interests">Interests</label>
+          <input ngModel #interests="ngModel" minlength="10" name="interests" required id="interests" type="text">
+          <div class="form-error" *ngIf="interests.touched && !interests.valid">
+            <div *ngIf="interests.errors.required">
+                Required
+            </div>
+            <div *ngIf="interests.errors.pattern">
+                Please Provide your Interests
+            </div>
+        </div>
+     </div>
+
+     <div class="control">
+        <label for="charities">Charities</label>
+        <input ngModel #chariities="ngModel" minlength="10" name="chrities" required id="charities" type="text">
+        <div class="form-error" *ngIf="charities.touched && !charities.valid">
+          <div *ngIf="charities.errors.required">
+              Required
+          </div>
+          <div *ngIf="charities.errors.pattern">
+              Please Provide your Charities
+          </div>
+      </div>
+    </div>
+
+    <div class="control">
+        <label for="pets">Pets</label>
+        <select>
+            <option value="male">Cat</option>
+            <option value="female">Dog</option>
+            <option value="gender neutral">Other</option>
+          </select>
+        <input ngModel #pets="ngModel" minlength="10" name="pets" required id="pets" type="text">
+        <div class="form-error" *ngIf="pets.touched && !pets.valid">
+          <div *ngIf="pets.errors.required">
+              Required
+          </div>
+          <div *ngIf="pets.errors.pattern">
+              Please Tell us what pets you have!
+          </div>
+      </div>
+    </div>
+
+    <div class="control">
+        <label for="alcohol">Alcohol Consumption</label>
+        <select>
+            <option value="male">Occasional</option>
+            <option value="female">Regular</option>
+            <option value="gender neutral">Never</option>
+          </select>
+        <input ngModel #alcohol="ngModel" minlength="10" name="alcohol" required id="alcohol" type="text">
+        <div class="form-error" *ngIf="alcohol.touched && !alcohol.valid">
+          <div *ngIf="alcohol.errors.required">
+              Required
+          </div>
+          <div *ngIf="alcohol.errors.pattern">
+              Please Provide your Alcohol Interests
+          </div>
+      </div>
+    </div>
+
+    <div class="control">
+        <label for="marriage">Marrital Status</label>
+        <select>
+            <option value="male">Married</option>
+            <option value="female">Divorced</option>
+            <option value="gender neutral">Single</option>
+          </select>
+        <input ngModel #marriage="ngModel" minlength="10" name="marriage" required id="marriage" type="text">
+        <div class="form-error" *ngIf="marriage.touched && !marriage.valid">
+          <div *ngIf="marriage.errors.required">
+              Required
+          </div>
+          <div *ngIf="marriage.errors.pattern">
+              Let us know your Marrital Status
+          </div>
+      </div>
+    </div>
+
+
+      <div class="control">
+        <label for="phone">Phone</label>
+        <input ngModel #phone="ngModel" pattern="[0-9]{10}" name="phone" required id="phone" type="text">
+        <div class="form-error" *ngIf="phone.touched && !phone.valid">
+          <div *ngIf="phone.errors.required">
+            Phone is required
+          </div>
+          <div *ngIf="phone.errors.pattern">
+            Phone number must be 10 digit.
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <label for="email">Email</label>
+        <input ngModel #email="ngModel" email="true" name="email" required id="email" type="text">
+        <div class="form-error" *ngIf="email.touched && !email.valid">
+          <div *ngIf="email.errors.required">
+            Email is required
+          </div>
+          <div *ngIf="email.errors.email && !email.errors.required">
+            Invalid Email address.
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <label for="password">Password</label>
+        <input ngModel #password="ngModel" minlength="4" name="password" required autocomplete="new-password" id="password" type="password">
+        <div class="form-error" *ngIf="password.touched && !password.valid">
+          <div *ngIf="password.errors.required">
+            Password is required
+          </div>
+          <div *ngIf="password.errors.minlength">
+            Password must be at least 4 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="control">
+        <button [disabled]="signupForm.invalid" class="btn" type="submit">Signup</button>
+        <p class="alter-way">
+          <a [routerLink]="'/login'">Already have an account?</a>
+        </p>
+      </div>
+      <div class="social-links-container">
+        <div class="hr"></div>
+        <div class="tag">Or, Sign in with</div>
+        <app-social-links></app-social-links>
+      </div>
+    </form>
+  </div>
+</div>
