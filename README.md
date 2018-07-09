@@ -17,8 +17,8 @@ A sample Login/Signup form made with angular 5 and Node Js.
 Make sure `node` & `npm` or `yarn` is installed on your system.
 
 ```
-    > git clone https://github.com/abhikumar427/Login-UserRegistration-Form
-    > cd Login-UserRegistration-Form/
+    > git clone https://github.com/abhikumar427/Login-UserRegistration-Form-
+    > cd Login-UserRegistration-Form-/
     > npm install
     > npm run
 ```
